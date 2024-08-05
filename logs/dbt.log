@@ -1,0 +1,33 @@
+[0m08:47:59.572925 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1084b95b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108497b00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108661dc0>]}
+
+
+============================== 08:47:59.577048 | 4846ddb3-85a9-4ca3-98b4-efa0743a82ea ==============================
+[0m08:47:59.577048 [info ] [MainThread]: Running with dbt=1.8.4
+[0m08:47:59.578051 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'version_check': 'True', 'quiet': 'False', 'invocation_command': 'dbt init', 'introspect': 'True', 'indirect_selection': 'eager', 'debug': 'False', 'log_cache_events': 'False', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'log_path': 'logs', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'use_colors': 'True', 'profiles_dir': '/Users/justinwatson/.dbt', 'empty': 'None', 'target_path': 'None', 'warn_error': 'None', 'cache_selected_only': 'False', 'static_parser': 'True', 'use_experimental_parser': 'False', 'log_format': 'default', 'partial_parse': 'True', 'fail_fast': 'False', 'no_print': 'None'}
+[0m08:47:59.590567 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse dict {'dir': PosixPath('/Users/justinwatson/.dbt')}
+[0m08:47:59.591213 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m08:48:22.372328 [debug] [MainThread]: Starter project path: /opt/anaconda3/lib/python3.12/site-packages/dbt/include/starter_project
+[0m08:48:22.380713 [info ] [MainThread]: 
+Your new dbt project "vg_sales_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m08:48:22.381612 [info ] [MainThread]: Setting up your profile.
+[0m08:48:22.383057 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No adapters available. Learn how to install an adapter by going to https://docs.getdbt.com/docs/connect-adapters#install-using-the-cli
+[0m08:48:22.393832 [debug] [MainThread]: Resource report: {"command_name": "init", "command_wall_clock_time": 22.947653, "process_user_time": 1.630724, "process_kernel_time": 0.336654, "process_mem_max_rss": "87986176", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m08:48:22.395019 [debug] [MainThread]: Command `dbt init` failed at 08:48:22.394784 after 22.95 seconds
+[0m08:48:22.395742 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108629760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108661eb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1086621e0>]}
+[0m08:48:22.396440 [debug] [MainThread]: Flushing usage events
