@@ -4,4 +4,4 @@ sources:
     database: FIVETRAN_DATABASE
     schema: RAW_VGCHARTZ
     tables:
-      - name: raw_vgchartz.data
+      - name: DATA
