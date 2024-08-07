@@ -6,3 +6,4 @@ select
 from {{ source('RAW_VIDEO_GAME_SALES_DATA', 'DATA') }}
 where critic_score is not null
 group by genre
+order by avg_critic_score desc
