@@ -1,7 +1,8 @@
 {{ config(materialized='table') }}
 
 with source_data as (
-  select distinct genre from raw_vgchartz.data
+  select distinct genre
+  from {{ source('RAW_VIDEO_GAME_SALES_DATA', 'DATA') }}
 )
 
 select * from source_data
