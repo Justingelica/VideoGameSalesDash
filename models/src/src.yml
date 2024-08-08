@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: RAW_VIDEO_GAME_SALES_DATA
+    database: FIVETRAN_DATABASE
+    schema: RAW_VGCHARTZ
+    tables:
+      - name: DATA
+        description: "Raw video game sales data from VGChartz"
+        columns:
+          - name: img
+            description: "Image URL of the game cover"
+          - name: title
+            description: "Title of the video game"
+          - name: console
+            description: "Console or platform of the video game"
+          - name: genre
+            description: "Genre of the video game"
+          - name: publisher
+            description: "Publisher of the video game"
+          - name: developer
+            description: "Developer of the video game"
+          - name: critic_score
+            description: "Critic score of the video game"
+          - name: total_sales
+            description: "Total sales of the video game in millions"
+          - name: na_sales
+            description: "Sales in North America in millions"
+          - name: jp_sales
+            description: "Sales in Japan in millions"
+          - name: pal_sales
+            description: "Sales in PAL regions in millions"
+          - name: other_sales
+            description: "Sales in other regions in millions"
+          - name: release_date
+            description: "Release date of the video game"
+          - name: last_update
+            description: "Last update date of the sales data"
