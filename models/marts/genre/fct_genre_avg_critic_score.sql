@@ -1,9 +1,9 @@
 {{ config(materialized='table') }}
 
 select
-  genre,
-  round(avg(critic_score), 1) as avg_critic_score
-from {{ source('RAW_VIDEO_GAME_SALES_DATA', 'DATA') }}
-where critic_score is not null
-group by genre
+  g.genre,
+  round(avg(cs.critic_score),1) as avg_critic_score
+from {{ ref('stg_genre') }} as g
+left join {{ ref('stg_critic_score') }} as cs on g.genre = cs.genre
+group by g.genre
 order by avg_critic_score desc
