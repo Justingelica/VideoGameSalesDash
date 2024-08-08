@@ -24,4 +24,3 @@ models:
 
       - name: critic_score
         description: "Critic score of the video game"
-
