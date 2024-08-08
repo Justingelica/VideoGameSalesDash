@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_video_game_sales
+    description: "Staging model for video game sales data"
+    columns:
+      - name: title
+        description: "Title of the video game"
+        tests:
+          - not_null
+
+      - name: platform
+        description: "Platform or console of the video game"
+        tests:
+          - not_null
+
+      - name: total_sales
+        description: "Total sales of the video game in millions"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('raw_vgchartz_data')
+              field: game_id
+
+      - name: critic_score
+        description: "Critic score of the video game"

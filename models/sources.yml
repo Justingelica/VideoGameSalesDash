@@ -1,7 +1,0 @@
-version: 2
-sources:
-  - name: RAW_VIDEO_GAME_SALES_DATA
-    database: FIVETRAN_DATABASE
-    schema: RAW_VGCHARTZ
-    tables:
-      - name: DATA
