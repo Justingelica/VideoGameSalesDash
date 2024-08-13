@@ -1,37 +1,46 @@
 {{ config(materialized='table') }}
 
-with sales_by_genre_region as (
+with genre_sales as (
+  select
+    g.genre,
+    sum(s.na_sales) as na_sales,
+    sum(s.jp_sales) as jp_sales,
+    sum(s.pal_sales) as pal_sales,
+    sum(s.other_sales) as other_sales
+  from {{ ref('stg_video_game_sales') }} as s
+  join {{ ref('stg_genre') }} as g
+    on s.genre = g.genre
+  group by g.genre
+),
+
+sales_by_genre_region as (
   select
     genre,
     'NA' as region,
-    sum(na_sales) as total_sales
-  from {{ ref('stg_video_game_sales') }}
+    ROUND(na_sales, 1) as total_sales
+  from genre_sales
   where na_sales is not null
-  group by genre
   union all
   select
     genre,
     'JP' as region,
-    sum(jp_sales) as total_sales
-  from {{ ref('stg_video_game_sales') }}
+    ROUND(jp_sales, 1) as total_sales
+  from genre_sales
   where jp_sales is not null
-  group by genre
   union all
   select
     genre,
     'PAL' as region,
-    sum(pal_sales) as total_sales
-  from {{ ref('stg_video_game_sales') }}
+    ROUND(pal_sales, 1) as total_sales
+  from genre_sales
   where pal_sales is not null
-  group by genre
   union all
   select
     genre,
     'Other' as region,
-    sum(other_sales) as total_sales
-  from {{ ref('stg_video_game_sales') }}
+    ROUND(other_sales, 1) as total_sales
+  from genre_sales
   where other_sales is not null
-  group by genre
 ),
 
 top_genres_by_region as (
